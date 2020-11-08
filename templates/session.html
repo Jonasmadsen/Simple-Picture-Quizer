@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simpel Billed Quiz!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/dragable.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/picture.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+</head>
+<body id="body" onload="dragElement(document.getElementById('mydiv'));">
+<button id="start" class="btn" onclick="quiz()">Start Quiz</button>
+<div class="content">
+    <img src="data:image/png;base64,{{ user_image }}" alt="img_data"  id="imgslot"/>
+</div>
+
+
+
+<div id="mydiv" >
+    <div id="mydivheader">Træk mig</div>
+    <label>
+        <textarea id="question"></textarea>
+    </label>
+    <button id="btn" style="background-color: silver; width: 100%" onclick="remember()">Placer Her</button>
+</div>
+
+</body>
+</html>

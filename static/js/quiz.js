@@ -1,6 +1,6 @@
 function quiz() {
 
-    let all = document.getElementsByTagName("textarea");
+    let all = document.getElementsByTagName("input");
 
     if (document.getElementById("start").textContent === "Done"){
         for (var i=0, max=all.length; i < max; i++) {
@@ -8,10 +8,14 @@ function quiz() {
             if (elemn.name !== elemn.value){
                 elemn.value = "Forkert! \n Jeg er: " + elemn.name;
                 elemn.style.backgroundColor = "red";
+                elemn.disabled = true;
+                elemn.style.color = "black"
             }
             else {
                 elemn.value = elemn.name;
                 elemn.style.backgroundColor = "green";
+                elemn.disabled = true;
+                elemn.style.color = "black"
             }
         }
         document.getElementById("start").textContent = "Start Quiz"
@@ -21,6 +25,8 @@ function quiz() {
      if (elemn.name === "")
         elemn.name = elemn.value;
      elemn.value = "";
+     elemn.style.backgroundColor = "white";
+     elemn.disabled = false;
     }
     document.getElementById("start").textContent = "Done"
     console.log("Cleared and saved answers")

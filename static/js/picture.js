@@ -11,9 +11,12 @@ function remember() {
     let rect = document.getElementById("question").getBoundingClientRect();
     console.log(rect.top, rect.right, rect.bottom, rect.left);
 
-    document.getElementById("btn").id = ID()
-    document.getElementById("mydivheader").id = ID()
-    document.getElementById("mydiv").id = ID()
+    document.getElementById("btn").id = ID();
+    document.getElementById("mydivheader").id = ID();
+    document.getElementById("mydiv").id = ID();
+
+    rect.x += 40;
+    rect.y += 40;
 
     document.getElementById("question").style.left = rect.x + "px";
     document.getElementById("question").style.top = rect.y + "px";
@@ -21,13 +24,16 @@ function remember() {
 
     let id = ID()
     document.getElementById("question").id = id
-    document.getElementById(id).textContent = text;
+    console.log(text)
+    document.getElementById(id).value = text;
+    document.getElementById(id).name = text;
 
     //Create next moveable frame
-    document.getElementById("body").innerHTML += "<div id=\"mydiv\"><div id=\"mydivheader\">Træk mig</div><label><textarea id='question'></textarea></label><button id=\"btn\" style=\"background-color: silver; width: 100%\" onclick=\"remember()\">Placer Her</button></div>";
+    document.getElementById("body").innerHTML += "<div id=\"mydiv\"><div id=\"mydivheader\">Træk mig</div><label><input type='text' id='question' onkeypress=\"onTestChange(this);\" class='textq'></label><button id=\"btn\" style=\"background-color: silver; width: 100%\" onclick=\"remember()\">Placer Her</button></div>";
 
 
     dragElement(document.getElementById('mydiv'));
+
 
     console.log("persisted");
 }

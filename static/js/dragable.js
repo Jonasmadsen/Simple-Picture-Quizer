@@ -7,6 +7,8 @@ function dragElement(elmnt) {
     /* otherwise, move the DIV from anywhere inside the DIV:*/
     elmnt.onmousedown = dragMouseDown;
   }
+  elmnt.style.left = "75%";
+  elmnt.style.top = "40%";
 
   function dragMouseDown(e) {
     e = e || window.event;

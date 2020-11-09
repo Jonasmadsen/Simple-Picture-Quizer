@@ -23,9 +23,26 @@
 }
 
 .btn {
+  position: absolute;
   padding: 10px;
   z-index: 10;
   background-color: #2196F3;
   color: #fff;
   width: 5em;
+  left: 80%;
+  top: 60%;
+}
+
+.fit {
+  max-width: 99%;
+  max-height: 99%;
+}
+
+.textq{
+  height: 20px;
+}
+
+input {
+    color: black;
+    -webkit-text-fill-color: black
 }

@@ -1,1 +1,1 @@
-flaskProject
+Simple picture annotation and quizzer!

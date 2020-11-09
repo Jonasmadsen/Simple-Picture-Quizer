@@ -6,20 +6,21 @@
     <script src="{{ url_for('static', filename='js/dragable.js') }}"></script>
     <script src="{{ url_for('static', filename='js/picture.js') }}"></script>
     <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ontest.js') }}"></script>
 </head>
 <body id="body" onload="dragElement(document.getElementById('mydiv'));">
-<button id="start" class="btn" onclick="quiz()">Start Quiz</button>
 <div class="content">
-    <img src="data:image/png;base64,{{ user_image }}" alt="img_data"  id="imgslot"/>
+    <img class="fit" src="data:image/png;base64,{{ user_image }}" alt="img_data"  id="imgslot"/>
 </div>
 
+<button id="start" class="btn" onclick="quiz()">Start Quiz</button>
 
 
 <div id="mydiv" >
     <div id="mydivheader">Træk mig</div>
-    <label>
-        <textarea id="question"></textarea>
-    </label>
+
+    <input type="text" id="question" onkeypress="onTestChange(this);" class="textq">
+
     <button id="btn" style="background-color: silver; width: 100%" onclick="remember()">Placer Her</button>
 </div>
 
